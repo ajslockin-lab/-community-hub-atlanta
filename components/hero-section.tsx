@@ -15,7 +15,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="flex overflow-hidden relative flex-col gap-4 justify-center items-center pt-10 w-full min-h-[100dvh] pb-footer-safe-area px-sides lg:gap-8">
+    <section className="flex overflow-hidden relative flex-col gap-4 justify-center items-center w-full min-h-[100dvh] pb-footer-safe-area px-sides lg:gap-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
