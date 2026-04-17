@@ -3,11 +3,11 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
+import { Counter } from "@/components/ui/counter";
+import { ActivityFeed } from "./activity-feed";
 
 const DURATION = 0.3;
 const EASE_OUT = "easeOut";
-
-import { Counter } from "@/components/ui/counter";
 
 export const HeroSection = () => {
   const scrollToDirectory = () => {
@@ -82,6 +82,16 @@ export const HeroSection = () => {
           <span className="text-3xl sm:text-4xl font-serif font-semibold text-foreground drop-shadow-md">24/7</span>
           <span className="text-sm text-foreground/70 mt-1">Access</span>
         </div>
+      </motion.div>
+
+      {/* Activity Feed - Hidden on mobile, shown on larger screens */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="fixed right-4 top-1/2 -translate-y-1/2 w-80 hidden xl:block z-40"
+      >
+        <ActivityFeed />
       </motion.div>
     </section>
   );

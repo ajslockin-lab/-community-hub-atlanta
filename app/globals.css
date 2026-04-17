@@ -4,16 +4,47 @@
 
 @layer base {
   :root {
-    /* Atlanta Community Hub - Warm, welcoming color scheme */
-    /* Controls page background - Deep charcoal */
+    /* Light mode - Atlanta Community Hub */
+    --background: 40 30% 97%;
+    --foreground: 220 15% 15%;
+    --primary: 220 15% 15%;
+    --primary-foreground: 40 30% 97%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+    --secondary: 220 10% 92%;
+    --secondary-foreground: 220 15% 15%;
+    --muted: 220 10% 92%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 35 80% 50%;
+    --accent-foreground: 220 15% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 100% 95%;
+    --success: 142 70% 45%;
+    --success-foreground: 142 70% 95%;
+    --border: 220 10% 85%;
+    --input: 220 10% 90%;
+    --ring: 35 80% 50%;
+    --chart-1: 35 80% 55%;
+    --chart-2: 173 58% 45%;
+    --chart-3: 220 60% 50%;
+    --chart-4: 280 60% 55%;
+    --chart-5: 0 70% 55%;
+    --radius: 0.75rem;
+
+    /* Spacing variables */
+    --inset: min(2vw, 1.5rem);
+    --sides: 1rem;
+    --footer-safe-area: calc(var(--inset) * 2 + 1.5rem + theme('spacing.9'));
+  }
+
+  .dark {
+    /* Dark mode - Atlanta Community Hub - Warm, welcoming color scheme */
     --background: 220 15% 10%;
-    /* Controls text color - Warm off-white */
     --foreground: 40 20% 95%;
-    /* Controls button color - Atlanta Gold accent */
     --primary: 40 20% 95%;
-    /* Controls filled button text color */
     --primary-foreground: 220 15% 10%;
-    /* Component variables */
     --card: 220 15% 12%;
     --card-foreground: 40 20% 95%;
     --popover: 220 15% 12%;
@@ -31,17 +62,6 @@
     --border: 220 10% 25%;
     --input: 220 10% 18%;
     --ring: 35 80% 55%;
-    --chart-1: 35 80% 55%;
-    --chart-2: 173 58% 45%;
-    --chart-3: 220 60% 50%;
-    --chart-4: 280 60% 55%;
-    --chart-5: 0 70% 55%;
-    --radius: 0.75rem;
-
-    /* Spacing variables */
-    --inset: min(2vw, 1.5rem);
-    --sides: 1rem;
-    --footer-safe-area: calc(var(--inset) * 2 + 1.5rem + theme('spacing.9'));
   }
 
   @media (min-width: 640px) {

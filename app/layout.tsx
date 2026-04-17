@@ -4,6 +4,8 @@ import { DM_Sans, JetBrains_Mono, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import { V0Provider } from "@/lib/context"
+import { BookmarksProvider } from "@/lib/bookmarks-context"
+import { ThemeProvider } from "next-themes"
 import dynamic from "next/dynamic"
 
 const V0Setup = dynamic(() => import("@/components/v0-setup"))
@@ -57,12 +59,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background scroll-smooth">
+    <html lang="en" className="bg-background scroll-smooth" suppressHydrationWarning>
       <body className={cn(dmSans.variable, jetBrainsMono.variable, playfairDisplay.variable, "antialiased font-sans")}>
-        <V0Provider isV0={isV0}>
-          {children}
-          {isV0 && <V0Setup />}
-        </V0Provider>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+          <BookmarksProvider>
+            <V0Provider isV0={isV0}>
+              {children}
+              {isV0 && <V0Setup />}
+            </V0Provider>
+          </BookmarksProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
