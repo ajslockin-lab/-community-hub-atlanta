@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { resources, categoryLabels, categoryColors } from "@/lib/resources-data";
 import { cn } from "@/lib/utils";
-import { ExternalLinkIcon, StarFilledIcon } from "@radix-ui/react-icons";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
 
 export const SpotlightSection = () => {
   const featuredResources = resources.filter((r) => r.featured);
@@ -17,12 +17,10 @@ export const SpotlightSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <StarFilledIcon className="size-5 text-amber-400" />
+          <div className="mb-4">
             <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-foreground tracking-tight">
               <span className="italic">In the</span> Spotlight
             </h2>
-            <StarFilledIcon className="size-5 text-amber-400" />
           </div>
           <p className="text-foreground/70 max-w-md mx-auto text-lg">
             Organizations doing incredible work for Atlanta. Hand-picked by our team.
@@ -50,10 +48,7 @@ export const SpotlightSection = () => {
                   >
                     {categoryLabels[resource.category]}
                   </span>
-                  <div className="flex items-center gap-1 text-amber-400">
-                    <StarFilledIcon className="size-4" />
-                    <span className="text-xs font-medium">Featured</span>
-                  </div>
+                  <span className="text-xs font-medium text-amber-400">Featured</span>
                 </div>
 
                 <h3 className="text-xl font-semibold text-foreground mb-3">

@@ -14,25 +14,25 @@ export default function Home() {
       <Navigation />
 
       {/* Morning Background */}
-      <ParallaxSection bgImage="/atlanta-morning.webp" className="pt-20">
+      <ParallaxSection bgImage="/images/atlanta-morning.jpg" className="pt-20">
         <div id="home">
           <HeroSection />
         </div>
       </ParallaxSection>
 
       {/* Afternoon Background */}
-      <ParallaxSection bgImage="/atlanta-afternoon.webp">
+      <ParallaxSection bgImage="/images/atlanta-afternoon.jpg">
         <ResourceDirectory />
       </ParallaxSection>
 
       {/* Sunset Background */}
-      <ParallaxSection bgImage="/atlanta-sunset.webp">
+      <ParallaxSection bgImage="/images/atlanta-sunset.jpg">
         <SpotlightSection />
         <EventsCalendar />
       </ParallaxSection>
 
       {/* Night Background */}
-      <ParallaxSection bgImage="/atlanta-night.webp">
+      <ParallaxSection bgImage="/images/atlanta-night.jpg">
         <CommunityForums />
         <SubmitResource />
         <SiteFooter />
