@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Atlanta Community Hub - Warm, welcoming color scheme */
+    /* Controls page background - Deep charcoal */
+    --background: 220 15% 10%;
+    /* Controls text color - Warm off-white */
+    --foreground: 40 20% 95%;
+    /* Controls button color - Atlanta Gold accent */
+    --primary: 40 20% 95%;
+    /* Controls filled button text color */
+    --primary-foreground: 220 15% 10%;
+    /* Component variables */
+    --card: 220 15% 12%;
+    --card-foreground: 40 20% 95%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 40 20% 95%;
+    --secondary: 220 10% 18%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 35 80% 55%;
+    --accent-foreground: 220 15% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 100% 95%;
+    --success: 142 70% 45%;
+    --success-foreground: 142 70% 95%;
+    --border: 220 10% 25%;
+    --input: 220 10% 18%;
+    --ring: 35 80% 55%;
+    --chart-1: 35 80% 55%;
+    --chart-2: 173 58% 45%;
+    --chart-3: 220 60% 50%;
+    --chart-4: 280 60% 55%;
+    --chart-5: 0 70% 55%;
+    --radius: 0.75rem;
+
+    /* Spacing variables */
+    --inset: min(2vw, 1.5rem);
+    --sides: 1rem;
+    --footer-safe-area: calc(var(--inset) * 2 + 1.5rem + theme('spacing.9'));
+  }
+
+  @media (min-width: 640px) {
+    :root {
+      --sides: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --sides: 3rem;
+    }
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
