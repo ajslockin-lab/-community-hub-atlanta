@@ -7,19 +7,18 @@ import { CommunityForums } from "@/components/community-forums";
 import { SubmitResource } from "@/components/submit-resource";
 import { SiteFooter } from "@/components/site-footer";
 import { ParallaxSection } from "@/components/ui/parallax-section";
-import { KenBurnsHero } from "@/components/ui/ken-burns-hero";
 
 export default function Home() {
   return (
     <main className="relative w-full">
       <Navigation />
 
-      {/* Ken Burns Hero with Slideshow */}
-      <KenBurnsHero>
+      {/* Morning Background */}
+      <ParallaxSection bgImage="/images/atlanta-morning.jpg" className="pt-20">
         <div id="home">
           <HeroSection />
         </div>
-      </KenBurnsHero>
+      </ParallaxSection>
 
       {/* Afternoon Background */}
       <ParallaxSection bgImage="/images/atlanta-afternoon.jpg">
