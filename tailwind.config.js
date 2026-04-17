@@ -33,7 +33,9 @@ module.exports = {
         shine: "shine 2s ease-in-out infinite",
       },
       fontFamily: {
-        serif: ["var(--font-instrument-serif)", "serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       boxShadow: {
         button:

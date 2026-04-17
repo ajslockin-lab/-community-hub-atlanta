@@ -65,7 +65,7 @@ export const SubmitResource = () => {
 
   if (isSubmitted) {
     return (
-      <section id="submit" className="py-16 px-sides">
+      <section id="submit" className="py-20 lg:py-28 px-sides">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -92,7 +92,7 @@ export const SubmitResource = () => {
   }
 
   return (
-    <section id="submit" className="py-16 px-sides">
+    <section id="submit" className="py-20 lg:py-28 px-sides">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -100,12 +100,11 @@ export const SubmitResource = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl italic text-foreground mb-4">
-            Submit a Resource
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-foreground mb-4 tracking-tight">
+            <span className="italic">Know</span> a Resource?
           </h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Know of a community resource that should be included in our directory?
-            Help us grow this hub by suggesting organizations that serve Atlanta residents.
+          <p className="text-foreground/70 max-w-md mx-auto text-lg">
+            Help us help others. Share a local organization that deserves to be listed.
           </p>
         </motion.div>
 

@@ -110,7 +110,7 @@ export const ResourceDirectory = () => {
   const categories = Object.keys(categoryLabels) as ResourceCategory[];
 
   return (
-    <section id="directory" className="py-16 px-sides">
+    <section id="directory" className="py-20 lg:py-28 px-sides">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,12 +118,11 @@ export const ResourceDirectory = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl italic text-foreground mb-4">
-            Resource Directory
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-foreground mb-4 tracking-tight">
+            <span className="italic">Find</span> Resources
           </h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Search and filter through community resources to find the support you need.
-            Our directory is regularly updated with verified local organizations.
+          <p className="text-foreground/70 max-w-lg mx-auto text-lg">
+            Browse verified local organizations ready to help. Filter by what you need.
           </p>
         </motion.div>
 

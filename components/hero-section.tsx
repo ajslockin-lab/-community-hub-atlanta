@@ -21,8 +21,10 @@ export const HeroSection = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: DURATION, ease: EASE_OUT }}
       >
-        <h1 className="font-serif text-4xl italic text-center sm:text-6xl lg:text-8xl text-foreground text-balance drop-shadow-lg">
-          Atlanta Community Hub
+        <h1 className="font-serif text-5xl text-center sm:text-7xl lg:text-9xl text-foreground text-balance drop-shadow-lg tracking-tight">
+          <span className="font-medium">Atlanta</span>
+          <br />
+          <span className="italic font-normal">Community Hub</span>
         </h1>
       </motion.div>
 
@@ -30,10 +32,10 @@ export const HeroSection = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: DURATION, ease: EASE_OUT, delay: 0.1 }}
-        className="text-base sm:text-lg lg:text-xl leading-relaxed font-medium text-center text-foreground/90 text-pretty max-w-2xl drop-shadow-md bg-black/20 p-4 rounded-2xl backdrop-blur-sm border border-white/10"
+        className="text-lg sm:text-xl lg:text-2xl leading-relaxed text-center text-foreground/90 text-pretty max-w-xl drop-shadow-md"
       >
-        Your central platform for finding and accessing local resources, community
-        services, and neighborhood connections across metro Atlanta.
+        Find what you need. Connect with neighbors. 
+        <span className="text-foreground/70 block mt-1">Real resources for real people across metro Atlanta.</span>
       </motion.p>
 
       <motion.div
@@ -59,23 +61,26 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: DURATION, ease: EASE_OUT, delay: 0.3 }}
-        className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mt-8 text-center bg-black/30 backdrop-blur-md border border-white/10 rounded-3xl p-6 shadow-2xl"
+        className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-8 text-center"
       >
-        <div className="flex flex-col gap-1">
-          <Counter value={12} suffix="+" className="text-2xl sm:text-3xl font-bold text-foreground drop-shadow-md" />
-          <span className="text-sm text-foreground/80 font-medium">Local Resources</span>
+        <div className="flex flex-col">
+          <Counter value={12} suffix="+" className="text-3xl sm:text-4xl font-serif font-semibold text-foreground drop-shadow-md" />
+          <span className="text-sm text-foreground/70 mt-1">Resources</span>
         </div>
-        <div className="flex flex-col gap-1">
-          <Counter value={9} className="text-2xl sm:text-3xl font-bold text-foreground drop-shadow-md" />
-          <span className="text-sm text-foreground/80 font-medium">Categories</span>
+        <div className="w-px bg-foreground/20 hidden sm:block" />
+        <div className="flex flex-col">
+          <Counter value={9} className="text-3xl sm:text-4xl font-serif font-semibold text-foreground drop-shadow-md" />
+          <span className="text-sm text-foreground/70 mt-1">Categories</span>
         </div>
-        <div className="flex flex-col gap-1">
-          <Counter value={8} suffix="+" className="text-2xl sm:text-3xl font-bold text-foreground drop-shadow-md" />
-          <span className="text-sm text-foreground/80 font-medium">Upcoming Events</span>
+        <div className="w-px bg-foreground/20 hidden sm:block" />
+        <div className="flex flex-col">
+          <Counter value={8} suffix="+" className="text-3xl sm:text-4xl font-serif font-semibold text-foreground drop-shadow-md" />
+          <span className="text-sm text-foreground/70 mt-1">Events</span>
         </div>
-        <div className="flex flex-col gap-1">
-          <span className="text-2xl sm:text-3xl font-bold text-foreground drop-shadow-md">24/7</span>
-          <span className="text-sm text-foreground/80 font-medium">Access</span>
+        <div className="w-px bg-foreground/20 hidden sm:block" />
+        <div className="flex flex-col">
+          <span className="text-3xl sm:text-4xl font-serif font-semibold text-foreground drop-shadow-md">24/7</span>
+          <span className="text-sm text-foreground/70 mt-1">Access</span>
         </div>
       </motion.div>
     </section>

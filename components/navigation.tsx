@@ -45,8 +45,8 @@ export const Navigation = () => {
         )}
       >
         <div className="flex items-center gap-2 py-2 px-2">
-          <span className="font-serif italic text-lg text-foreground px-3 hidden sm:block">
-            ATL Hub
+          <span className="font-serif text-xl text-foreground px-3 hidden sm:block tracking-tight">
+            <span className="font-medium">ATL</span> <span className="italic font-normal">Hub</span>
           </span>
           
           {/* Desktop Navigation */}

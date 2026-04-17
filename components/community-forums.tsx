@@ -111,7 +111,7 @@ const ForumCard = ({ topic }: { topic: ForumTopic }) => {
 
 export const CommunityForums = () => {
   return (
-    <section id="forums" className="py-16 px-sides bg-primary/5">
+    <section id="forums" className="py-20 lg:py-28 px-sides bg-primary/5">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -119,12 +119,11 @@ export const CommunityForums = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl italic text-foreground mb-4">
-            Community Forums
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-foreground mb-4 tracking-tight">
+            <span className="italic">Join</span> the Conversation
           </h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Join the conversation with your Atlanta neighbors. Share experiences, ask questions,
-            and build connections within our diverse community.
+          <p className="text-foreground/70 max-w-md mx-auto text-lg">
+            Chat with your neighbors. Ask questions. Share what you know.
           </p>
         </motion.div>
 

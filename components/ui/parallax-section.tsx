@@ -20,20 +20,21 @@ export function ParallaxSection({ id, bgImage, children, className = "" }: Paral
     gsap.registerPlugin(ScrollTrigger);
 
     if (sectionRef.current && bgRef.current) {
+      // Main parallax timeline for background
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top bottom", // when the top of the section hits the bottom of the viewport
-          end: "bottom top", // when the bottom of the section hits the top of the viewport
-          scrub: true,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 0.5,
         }
       });
 
-      // Move the background image slightly slower than the scroll to create parallax
+      // More dramatic parallax movement with scale
       tl.fromTo(
         bgRef.current,
-        { yPercent: -20 },
-        { yPercent: 20, ease: "none" }
+        { yPercent: -15, scale: 1.1 },
+        { yPercent: 15, scale: 1, ease: "none" }
       );
     }
 
@@ -68,8 +69,9 @@ export function ParallaxSection({ id, bgImage, children, className = "" }: Paral
         <img 
           ref={bgRef}
           src={bgImage} 
-          alt="Background" 
-          className="absolute top-[-25%] left-0 w-full h-[150%] object-cover object-center"
+          alt="" 
+          aria-hidden="true"
+          className="absolute top-[-20%] left-0 w-full h-[140%] object-cover object-center will-change-transform"
         />
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]"></div>

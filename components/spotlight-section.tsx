@@ -9,7 +9,7 @@ export const SpotlightSection = () => {
   const featuredResources = resources.filter((r) => r.featured);
 
   return (
-    <section id="spotlight" className="py-16 px-sides bg-primary/5">
+    <section id="spotlight" className="py-20 lg:py-28 px-sides bg-primary/5">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,16 +17,15 @@ export const SpotlightSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <StarFilledIcon className="size-6 text-amber-400" />
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl italic text-foreground">
-              Community Spotlight
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <StarFilledIcon className="size-5 text-amber-400" />
+            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-foreground tracking-tight">
+              <span className="italic">In the</span> Spotlight
             </h2>
-            <StarFilledIcon className="size-6 text-amber-400" />
+            <StarFilledIcon className="size-5 text-amber-400" />
           </div>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Highlighting essential community organizations making a difference in Atlanta.
-            These featured resources have been selected for their outstanding service and impact.
+          <p className="text-foreground/70 max-w-md mx-auto text-lg">
+            Organizations doing incredible work for Atlanta. Hand-picked by our team.
           </p>
         </motion.div>
 
