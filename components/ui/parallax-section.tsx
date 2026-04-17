@@ -15,32 +15,43 @@ interface ParallaxSectionProps {
 export function ParallaxSection({ id, bgImage, children, className = "" }: ParallaxSectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLImageElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     if (sectionRef.current && bgRef.current) {
-      // Main parallax timeline for background
+      // Create parallax timeline with smooth scrub
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top bottom",
           end: "bottom top",
-          scrub: 0.5,
+          scrub: 0
         }
       });
 
-      // More dramatic parallax movement with scale
+      // Background moves slower than scroll - classic parallax effect
       tl.fromTo(
         bgRef.current,
-        { yPercent: -15, scale: 1.1 },
-        { yPercent: 15, scale: 1, ease: "none" }
+        { yPercent: -20 },
+        { yPercent: 20, ease: "none" }
       );
+
+      // Optional: slight overlay fade for depth
+      if (overlayRef.current) {
+        tl.fromTo(
+          overlayRef.current,
+          { opacity: 0.5 },
+          { opacity: 0.7, ease: "none" },
+          "<"
+        );
+      }
     }
 
-    // Only initialize Lenis once if not already initialized
+    // Initialize Lenis for smooth scrolling (only once globally)
     let lenis: Lenis | null = null;
-    if (!window.lenisInstance) {
+    if (typeof window !== 'undefined' && !window.lenisInstance) {
       lenis = new Lenis({
         smoothWheel: true,
       });
@@ -54,8 +65,12 @@ export function ParallaxSection({ id, bgImage, children, className = "" }: Paral
     }
 
     return () => {
-      // Cleanup happens globally or if this is the last component
-      // We keep it simple here to avoid killing the global instance if others use it
+      // Clean up ScrollTrigger for this specific instance
+      ScrollTrigger.getAll().forEach(st => {
+        if (st.trigger === sectionRef.current) {
+          st.kill();
+        }
+      });
     };
   }, []);
 
@@ -65,18 +80,23 @@ export function ParallaxSection({ id, bgImage, children, className = "" }: Paral
       ref={sectionRef} 
       className={`relative w-full overflow-hidden min-h-screen ${className}`}
     >
+      {/* Background image layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img 
           ref={bgRef}
           src={bgImage} 
           alt="" 
           aria-hidden="true"
-          className="absolute top-[-20%] left-0 w-full h-[140%] object-cover object-center will-change-transform"
+          className="absolute top-[-25%] left-0 w-full h-[150%] object-cover object-center will-change-transform"
         />
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-[2px]"></div>
+        <div 
+          ref={overlayRef}
+          className="absolute inset-0 bg-background/60"
+        />
       </div>
       
+      {/* Content layer */}
       <div className="relative z-10 h-full">
         {children}
       </div>
@@ -84,7 +104,7 @@ export function ParallaxSection({ id, bgImage, children, className = "" }: Paral
   );
 }
 
-// Add a type definition for the global window object to store the lenis instance
+// Type definition for global Lenis instance
 declare global {
   interface Window {
     lenisInstance?: Lenis;
