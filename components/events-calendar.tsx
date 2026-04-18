@@ -36,7 +36,7 @@ export const EventsCalendar = () => {
   );
 
   return (
-    <section id="events" className="py-16 px-sides">
+    <section id="events" className="py-20 lg:py-28 px-sides">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,12 +44,11 @@ export const EventsCalendar = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl italic text-foreground mb-4">
-            Upcoming Events
+          <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-foreground mb-4 tracking-tight">
+            <span className="italic">What&apos;s</span> Happening
           </h2>
-          <p className="text-foreground/70 max-w-2xl mx-auto">
-            Stay connected with community events, workshops, and programs happening across Atlanta.
-            Mark your calendar and join your neighbors.
+          <p className="text-foreground/70 max-w-md mx-auto text-lg">
+            Workshops, meetups, and community gatherings around the city.
           </p>
         </motion.div>
 

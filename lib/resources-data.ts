@@ -19,6 +19,8 @@ export interface Resource {
   website: string;
   hours: string;
   featured: boolean;
+  lat: number;
+  lng: number;
 }
 
 export interface Event {
@@ -67,6 +69,8 @@ export const resources: Resource[] = [
     website: "https://acfb.org",
     hours: "Mon-Fri: 8AM-5PM",
     featured: true,
+    lat: 33.6894,
+    lng: -84.4503,
   },
   {
     id: "2",
@@ -79,6 +83,8 @@ export const resources: Resource[] = [
     website: "https://gatewayctr.org",
     hours: "24/7 Services Available",
     featured: true,
+    lat: 33.7490,
+    lng: -84.3936,
   },
   {
     id: "3",
@@ -91,6 +97,8 @@ export const resources: Resource[] = [
     website: "https://gradyhealth.org",
     hours: "Emergency: 24/7, Clinics: Mon-Fri 8AM-5PM",
     featured: true,
+    lat: 33.7545,
+    lng: -84.3827,
   },
   {
     id: "4",
@@ -103,6 +111,8 @@ export const resources: Resource[] = [
     website: "https://atlantaga.gov/workforce",
     hours: "Mon-Fri: 8:30AM-5PM",
     featured: false,
+    lat: 33.7219,
+    lng: -84.4119,
   },
   {
     id: "5",
@@ -115,6 +125,8 @@ export const resources: Resource[] = [
     website: "https://bgcma.org",
     hours: "After School: 3PM-8PM, Summer: 7AM-6PM",
     featured: false,
+    lat: 33.7627,
+    lng: -84.3963,
   },
   {
     id: "6",
@@ -127,6 +139,8 @@ export const resources: Resource[] = [
     website: "https://atlantalegalaid.org",
     hours: "Mon-Fri: 9AM-5PM",
     featured: false,
+    lat: 33.7570,
+    lng: -84.3859,
   },
   {
     id: "7",
@@ -139,6 +153,8 @@ export const resources: Resource[] = [
     website: "https://atlantaga.gov/seniors",
     hours: "Mon-Fri: 9AM-4PM",
     featured: false,
+    lat: 33.7488,
+    lng: -84.4208,
   },
   {
     id: "8",
@@ -151,6 +167,8 @@ export const resources: Resource[] = [
     website: "https://atlantatech.edu",
     hours: "Mon-Thu: 8AM-7PM, Fri: 8AM-3PM",
     featured: false,
+    lat: 33.7145,
+    lng: -84.4282,
   },
   {
     id: "9",
@@ -163,6 +181,8 @@ export const resources: Resource[] = [
     website: "https://westsidefuturefund.org",
     hours: "Mon-Fri: 9AM-5PM",
     featured: false,
+    lat: 33.7668,
+    lng: -84.4305,
   },
   {
     id: "10",
@@ -175,6 +195,8 @@ export const resources: Resource[] = [
     website: "https://goodsamatlanta.org",
     hours: "Mon-Fri: 8AM-5PM",
     featured: false,
+    lat: 33.7726,
+    lng: -84.4371,
   },
   {
     id: "11",
@@ -187,6 +209,8 @@ export const resources: Resource[] = [
     website: "https://hoseahelps.org",
     hours: "Mon-Fri: 9AM-4PM",
     featured: false,
+    lat: 33.7089,
+    lng: -84.3715,
   },
   {
     id: "12",
@@ -199,6 +223,8 @@ export const resources: Resource[] = [
     website: "https://atlantahousing.org",
     hours: "Mon-Fri: 8:30AM-5PM",
     featured: false,
+    lat: 33.7570,
+    lng: -84.3794,
   },
 ];
 

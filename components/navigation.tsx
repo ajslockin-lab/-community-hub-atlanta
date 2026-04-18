@@ -2,9 +2,12 @@
 
 import { cn } from "@/lib/utils";
 import { useState, useEffect } from "react";
-import { HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon, Cross1Icon, HeartFilledIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useBookmarks } from "@/lib/bookmarks-context";
+import { useTheme } from "next-themes";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -18,6 +21,13 @@ const navItems = [
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { bookmarks } = useBookmarks();
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,8 +55,8 @@ export const Navigation = () => {
         )}
       >
         <div className="flex items-center gap-2 py-2 px-2">
-          <span className="font-serif italic text-lg text-foreground px-3 hidden sm:block">
-            ATL Hub
+          <span className="font-serif text-xl text-foreground px-3 hidden sm:block tracking-tight">
+            <span className="font-medium">ATL</span> <span className="italic font-normal">Hub</span>
           </span>
           
           {/* Desktop Navigation */}
@@ -61,6 +71,27 @@ export const Navigation = () => {
               </button>
             ))}
           </div>
+
+          {/* Theme Toggle */}
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="p-2 text-foreground/70 hover:text-foreground transition-colors"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            >
+              {theme === "dark" ? <SunIcon className="size-5" /> : <MoonIcon className="size-5" />}
+            </button>
+          )}
+
+          {/* Saved Resources Link */}
+          <Link href="/saved" className="relative p-2 text-foreground/70 hover:text-foreground transition-colors">
+            <HeartFilledIcon className="size-5" />
+            {bookmarks.length > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-rose-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                {bookmarks.length}
+              </span>
+            )}
+          </Link>
 
           {/* Mobile Menu Button */}
           <Button
